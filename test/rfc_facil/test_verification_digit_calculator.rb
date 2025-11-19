@@ -1,3 +1,5 @@
+require "test_helper"
+
 class VerificationDigitCalculatorTest < Minitest::Test
   def test_calculate_verification_digit
     assert_equal('8', verification_digit('GODE561231GR'))

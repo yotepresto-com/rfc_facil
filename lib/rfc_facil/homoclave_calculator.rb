@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module RfcFacil
   class HomoclaveCalculator
-    HOMOCLAVE_DIGITS = '123456789ABCDEFGHIJKLMNPQRSTUVWXYZ'.freeze
+    HOMOCLAVE_DIGITS = '123456789ABCDEFGHIJKLMNPQRSTUVWXYZ'
     FULL_NAME_MAPPING  = {
       ' ' => '00', '0' => '00', '1' => '01', '2' => '02', '3' => '03', '4' => '04',
       '5' => '05', '6' => '06', '7' => '07', '8' => '08', '9' => '09', '&' => '10',
@@ -10,6 +12,7 @@ module RfcFacil
       'S' => '32', 'T' => '33', 'U' => '34', 'V' => '35', 'W' => '36', 'X' => '37',
       'Y' => '38', 'Z' => '39', 'Ñ' => '40'
     }.freeze
+
     attr_accessor :person, :full_name, :mapped_full_name, :pairs_of_digits_sum, :homoclave
 
     def initialize(person)
@@ -45,7 +48,8 @@ module RfcFacil
     end
 
     def map_full_name_to_digits_code
-      @mapped_full_name = '0'
+      @mapped_full_name = '0'.dup
+
       @full_name.each_char do |c|
         @mapped_full_name << map_character_to_two_digit_code(c)
       end

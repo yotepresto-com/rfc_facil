@@ -1,3 +1,5 @@
+require "test_helper"
+
 class TestJurisitcTenDigitsCodeCalculator < Minitest::Test
   def should_take_first_letters_from_the_first_three_words_from_legal_name
     assert_equal('MNE', ten_digits_code('Mu Networks S.A.P.I. de C.V.', 10, 07, 2014)[0, 3])

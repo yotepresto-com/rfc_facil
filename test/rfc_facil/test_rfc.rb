@@ -1,3 +1,5 @@
+require "test_helper"
+
 class TestRfc < Minitest::Test
   def test_rfc_for_a_natural_person
     rfc = RfcFacil::Rfc.new(name: 'Adrian Marcelo', first_last_name: 'Rangel',
