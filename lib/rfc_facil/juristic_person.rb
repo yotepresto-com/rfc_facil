@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RfcFacil
   class JuristicPerson
     attr_accessor :legal_name, :day, :month, :year

@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require 'test_helper'
+
 class TestNaturalTenDigitsCodeCalculator < Minitest::Test
   def test_calculate_ten_digits_code_for_simple_test_case
     assert_equal('BAFJ701213', ten_digits_code('Juan', 'Barrios', 'Fernandez', 13, 12, 1970))
@@ -62,11 +66,16 @@ class TestNaturalTenDigitsCodeCalculator < Minitest::Test
 
   def test_use_first_two_letters_of_first_last_name_if_nil_second_last_name_is_provided
     assert_equal('ZAGE701213', ten_digits_code('Gerarda', 'Zafra', nil, 13, 12, 1970))
+    assert_equal('ADJO701213', ten_digits_code('Jose', 'Addy', nil, 13, 12, 1970))
   end
 
   def test_replace_last_letter_with_x_if_code_makes_forbidden_word
     # BUEI -> BUEX
     assert_equal('BUEX701213', ten_digits_code('Ingrid', 'Bueno', 'Ezquerra', 13, 12, 1970))
+  end
+
+  def test_replace_the_second_letter_with_x_when_the_second_letter_is_not_a_vowel
+    assert_equal('AXGJ701213', ten_digits_code('Jose', 'Addy', 'Gomez', 13, 12, 1970))
   end
 
   private

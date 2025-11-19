@@ -1,3 +1,5 @@
+require "test_helper"
+
 class TestHomoclaveCalculator < Minitest::Test
   def test_calculate_homoclave_for_simple_test_case
     assert_equal('LN', homoclave('Juan', 'Perez', 'Garcia'))

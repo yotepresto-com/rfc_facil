@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RfcFacil
   class JuristicTenDigitsCodeCalculator
     attr_accessor :person

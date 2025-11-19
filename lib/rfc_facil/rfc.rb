@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RfcFacil
   class Rfc
     attr_accessor :name, :first_last_name, :second_last_name, :day, :month, :year,
